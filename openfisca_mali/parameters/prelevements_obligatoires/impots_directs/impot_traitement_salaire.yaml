@@ -1,0 +1,45 @@
+# On créé un paramètre pour le barème d'imposition de l'ITS
+description: Barème de l'impôt sur les traitements et les salaires
+brackets:
+- rate:
+    2018-01-01:
+      value: 0.0
+  threshold:
+    2018-01-01:
+      value: 0
+- rate:
+    2018-01-01:
+      value: 0.05
+  threshold: 
+    2018-01-01:
+      value: 175000
+- rate:
+    2018-01-01:
+      value: 0.13
+  threshold: 
+    2018-01-01:
+      value: 600000
+- rate:
+    2018-01-01:
+      value: 0.2
+  threshold: 
+    2018-01-01:
+      value: 1200000
+- rate:
+    2018-01-01:
+      value: 0.28
+  threshold: 
+    2018-01-01:
+      value: 1800000
+- rate:
+    2018-01-01:
+      value: 0.34
+  threshold: 
+    2018-01-01:
+      value: 2400000
+- rate:
+    2018-01-01:
+      value: 0.4
+  threshold: 
+    2018-01-01:
+      value:  3500000

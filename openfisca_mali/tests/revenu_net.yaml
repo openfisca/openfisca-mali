@@ -1,0 +1,10 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test age.yaml`
+
+- name: revenu_net est une variable qui fonctionne
+  period: 2018
+  input_variables:
+    revenu_net_imposable: 10000
+  output_variables:
+    revenu_net_imposable: 10000
+    impot_traitement_salaire: 0
