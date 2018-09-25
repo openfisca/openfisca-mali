@@ -10,7 +10,7 @@ from openfisca_core.model_api import *
 # Import the Entities specifically defined for this tax and benefit system
 from openfisca_mali.entities import *
 
-#On créé une variable pour le revenu net imposable
+
 class revenu_net_imposable(Variable):
     value_type = float
     entity = Person
