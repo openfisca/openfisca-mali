@@ -1,0 +1,49 @@
+Instrument fiscal,Ce qu'il rapporte (en Mds FCFA),,A-t-on de quoi le mesurer ? ,,,,,
+,2011,Moyenne (2010-2013),Commentaire,Exonérations,Assiette,Taux,Variable,Commentaire (BASE)
+Impôt sur les revenus,,,,,,,,
+Impôt sur les traitements et les salaires (ITS),"57,6","59,875",,,,,,
+Impôt sur les revenus fonciers (IRF),,,,(ART 16),(ART 14) revenus des immeubles bâtis,,x,"- Sont exonérés les immeubles occupés par le propriétaire et les membres de sa famille. 
+- On a pas les infos dans la base"
+Impôt sur les revenus de valeurs mobilières (IRVM),"18,8","16,4",,(ART 31),"(ART 23) Intérêts, dividendes, arrérages",,x,- On a pas les infos dans la base 
+Impôt sur les bénéfices industriels et commerciaux (IS-BIC),"103,6","116,05","
+- Deux régimes d'imposition : Impôt synthétiuqe (au plus 30 M de CA hors taxe) et le régime du bénéfice réel",,Bénéfices net  obtenu l'année précédente,Tarifs dépend du CA et du type d'entreprise,x,- On a pas le CA
+Retenue BIC,"9,7","11,625",(FMI) : Perçue sur les prestations des services par des personnes 'ayant pas au Mali d'installation professionnelle permanente. ,,,"15,00 %",,
+Benefices agricoles,x,x,Le décret d'application de l'IBA n'a jamais été promulgué (FMI),,,,x,
+Taxe sur les plus-values de cession,,,,"(ART 123) Exonérés : plus-value réalisée lors de la cession d'une résidence principale, ...",Diffférence entre le prix de cession net et le prix d'acquisition par le cédant.,"- 35% pour le splus-values à court terme
+- 25% pour les plus-values à long terme",x,- On a pas les infos dans la base. 
+,,,,,,,,
+Contribution des patentes et licences,,,"-Toute personne malienne/étrangère qui exerce au Mali un commerce, une profession
+","- Exemptions : Etat et organismes pub, personnes exonérés de l'IBIC, assujettis à l'impôt synthétique, associés des sociétés en nom collectif, exportateurs de bétails
+- Exemptions : première année civile d'activité des ent
+- Exonérations : personnes physiques mois de 40 ans, diplomés","Droit fixe : dépen du CA et du type d'entreprise
+Droit proportionnel : selon la valeur locative des locaux",,x,"- La partie basée sur le droit proportionnel ne peut pas être calculé : on n'a pas les infos sur la valeurs locative des locaux pro
+- On a pas le CA"
+Impôts forfaitaires sur le revenu,,,,,,,,
+Taxe de voirie,,,Un arêté du ministère chargé des Finances fixe les modalités d'application ,,"- Personnes physiques/morales assujetties à la patente 
+- Familles vivant à l'intérieur d'une concession","TAUX MAX : 
+- 5% du montant des droits de patente pro
+- 3000 F par famille/an vivant à l'intérieur d'une concession (Bamako)
+- 2000 F par famille/an vivant à 'litnérieur d'une concession ailleurs",,"Je ne suis pas sûre qu'on puisse retrouver les concessions ? 
+- Taxe régionale ? "
+Taxe de Développement régional et local,,,,"Quelques exemptions : homme de troupe, indigents, élèves et étudiants, + de 60 ans ...","- Personnes de plus de 14 ans, résidant
+",Taux dépend de la région (ART 154),,"Ce sera sûrement difficile de prendre en compte toutes les exemptions avec les données disponibles
+-Taxe régionale ?"
+Taxe sur le bétall,,,,"Ne sont pas retenus : boeufs de traits et de labour, animaux possédés par les contribuables passibles de l’IBA.",Nombre d'animaux détenus,Tarif forfaitaire selon le type de bétails,x,On n'a pas de questions sur la possession de bétail
+,,,,,,,,
+Impôts assimilés aux impôts directs,,,,,,,,
+Contribution forfaitaire à la charge des employeurs,"7,8","8,05","Tout particuliers et sociétés passibles de l'IS, BIC, IBA sont assujettis à cette contribution",,"Montant brut des rémunérations, traitements, salarires, indemnités payés à l'ensemble de leur personnel","5,50 %",,Il faudrait les infos des entreprises.
+Taxe sur les armes à feu,,,,,Tout détenteur d'une armeur à feu,"Taxe annuel, selon le type",x,On n'a pas de questions sur la possession d'armes à feu
+Taxe sur les véhicules automobiles,,,,Exonérés : bénéficiaires de pensions d'invalidité,"Tous les véhicules à motur, de tourisme ou utilitaires",Dépend de la puissance des véhicules (ART 170 – p75),,"Info dans EMOP P1 et non EMOP P3 sur la posession, mais non la puissance."
+Taxe sur les bicyclettes,,,,Exemptions : bicylettes en conformité des règlements administratifs (?) ou possédées par des contribuables devenus infirmes,,"Forfait annuelle : 1500 FCFA dans le distrcit de Bamako, 1000 CFA dans les autres localités",,"On connaît la possession de bicylette (EMOP P1, module PM), mais on ne sait pas lesquelles sont en conformité/"
+Taxe sur les transports routiers,,,"-Libère les transporteurs de la contribution des patentes, de la cotisation de la CCI, de la taxe sur les véhicules automobiles
+- Pour les transporteurs ayant un CA inférieur à 30M de F, libère des autres impots",,- Par véhicule,"-Dépend de la taille (nb de places) pour les véhicules affectés au transport public de personnes
+- Dpend de la charge utile pour le transport public de biens",x,On n'a pas ce genre de détails
+Taxe de formation professionnelle,,,"Concernées : personnes passibles de l'IS, BIC, et IBA. ",,"-Montant brut des rémunérations, traitement, salaires payés à l'ensemble de leur personnel par les persones  visées","2,00 %",,- Il faudrait les infos des entreprises
+,,,,,,,,
+Autres impôts directs,"23,3","24,65",,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,"Source : Rapport technique FMI et Code des Impôts du Mali
+Egalement : CGI en ligne",,,,,,,
