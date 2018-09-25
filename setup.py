@@ -19,7 +19,7 @@ setup(
         'OpenFisca-Core >= 23.1, < 24.0',
         ],
     extras_require={
-        'test': [
+        'dev': [
             'flake8 >= 3.4.0, < 3.5.0',
             'flake8-print',
             'nose',
