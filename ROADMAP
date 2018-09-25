@@ -1,0 +1,26 @@
+ETAPE 1 : Impôt sur les traitements et les Salaires (ITS)
+
+Déjà effectué : 
+-> Création d'une variable d'impôt sur les traitements et les salaires
+-> Création d'une variable de revenu net imposable
+-> Création d'un paramètre donnant le barême de l'ITS
+-> Définition d'une formule appliquant le barême d'imposition au revenu net imposable
+
+A faire : 
+- Passage du montant brut de l'impôt au montant net de l'impôt : coder les réductions familiales
+
+- Passer du montant brut du revenu imposable au montant net : 
+Il faut déduire
+-> retenues faites par l'employeur en vie de la constitution de pensions ou de retraites dans la limite de 4% des salaires bruts
+NB : plafond supplémentaire pour certains cas particuliers, fixé par les textes législatifs régissant ces domaines
+-> allocations et indemntés spéciales destinées à couvrir les frais inhérents à la fonction/l'emploi 
+NB : maximum déductible fixé par un arrêté  (inclus dans le CGI sur le site https://www.dgi.gouv.ml/CGI/)
+
+- Calculer le revenu soumis à l'impôt
+montant total des traitements, salaires, pécules, indemnités, émouluments, primes, gratifications ainsi que tous autres avantages en argent/nature
+payées dans l'année aux salariés par les employeurs publics ou privés
++ pensions et rentes viagères
++ rémunérations allouées aux dirigeants des soc par actions et rétribuant leur fonction de direction 
+NB : exemptions de l'art 25
+- les revenus affranchis de l'impôt
+NB : conditions de déductivilité sont précisées par arrêté (inclus dans le CGI sur le site https://www.dgi.gouv.ml/CGI/)
