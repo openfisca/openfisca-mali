@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/openfisca-country-template',
     include_package_data=True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 23.1, < 24.0',
+        'OpenFisca-Core >= 25.2, < 26.0',
         ],
     extras_require={
         'dev': [

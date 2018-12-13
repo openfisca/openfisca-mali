@@ -8,7 +8,7 @@ brackets:
   threshold:
     2011-01-01:
       value: 0
-     2015-07-01:
+    2015-07-01:
       value: 0
 - rate:
     2011-01-01:

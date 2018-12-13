@@ -6,7 +6,7 @@ clean:
 
 test:
 	flake8
-	openfisca-run-test --country-package openfisca_mali openfisca_mali/tests
+	openfisca test --country-package openfisca_mali openfisca_mali/tests
 
 check-syntax-errors:
 	python -m compileall -q 

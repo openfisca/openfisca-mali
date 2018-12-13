@@ -11,7 +11,7 @@ class impot_traitement_salaire(Variable):
     label = u"Barême de l'impôt pour les traitements et les salaires"
     definition_period = YEAR
 
-    
+
 class revenu_net_imposable(Variable):
     value_type = float
     entity = Person
