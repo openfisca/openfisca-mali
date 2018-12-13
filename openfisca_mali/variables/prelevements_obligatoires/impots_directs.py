@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from openfisca_core.model_api import *
 from openfisca_mali.entities import *
+
 
 class impot_traitement_salaire(Variable):
     value_type = float
