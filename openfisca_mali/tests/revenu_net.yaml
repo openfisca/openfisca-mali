@@ -1,5 +1,4 @@
-
-- name: Montant d'impôt correspondant au revenu net imposable
+- name: Impôt à partir du revenu net imposable
   period: 2018
   input_variables:
     revenu_net_imposable: 10000
