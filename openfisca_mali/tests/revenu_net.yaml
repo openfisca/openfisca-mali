@@ -1,0 +1,17 @@
+- name: Impôt à partir du revenu net imposable
+  period: 2018
+  input:
+    revenu_net_imposable: 10000
+  output:
+    revenu_net_imposable: 10000
+    impot_traitement_salaire: 0
+
+
+- name: Impôt à partir du revenu net imposable
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+  output:
+    revenu_net_imposable: 430000
+    impot_traitement_salaire: 5000
+

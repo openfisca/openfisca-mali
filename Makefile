@@ -9,8 +9,8 @@ test:
 	openfisca-run-test --country-package openfisca_mali openfisca_mali/tests
 
 check-syntax-errors:
-	python -m compileall -q 
-	
+	python -m compileall -q
+
 flake8:
 	@# Do not analyse .gitignored files.
 	@# `make` needs `$$` to output `$`. Ref: http://stackoverflow.com/questions/2382764.
