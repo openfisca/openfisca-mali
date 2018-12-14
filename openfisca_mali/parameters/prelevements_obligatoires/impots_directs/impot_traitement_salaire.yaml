@@ -3,7 +3,7 @@ brackets:
 - rate:
     2011-01-01:
       value: 0.0
-    2015-07-01: 
+    2015-07-01:
       value: 0.0
   threshold:
     2011-01-01:
@@ -13,8 +13,7 @@ brackets:
 - rate:
     2011-01-01:
       value: 0.05
-    2015-07-01:
-  threshold: 
+  threshold:
     2011-01-01:
       value: 175000
     2015-07-01:
@@ -24,7 +23,7 @@ brackets:
       value: 0.13
     2015-07-01:
       value: 0.12
-  threshold: 
+  threshold:
     2011-01-01:
       value: 600000
     2015-07-01:
@@ -34,7 +33,7 @@ brackets:
       value: 0.2
     2015-07-01:
       value: 0.18
-  threshold: 
+  threshold:
     2011-01-01:
       value: 1200000
     2015-07-01:
@@ -44,7 +43,7 @@ brackets:
       value: 0.28
     2015-07-01:
       value: 0.26
-  threshold: 
+  threshold:
     2011-01-01:
       value: 1800000
     2015-07-01:
@@ -54,7 +53,7 @@ brackets:
       value: 0.34
     2015-07-01:
       value: 0.31
-  threshold: 
+  threshold:
     2018-01-01:
       value: 2400000
     2015-07-01:
@@ -64,7 +63,7 @@ brackets:
       value: 0.4
     2015-07-01:
       value: 0.37
-  threshold: 
+  threshold:
     2018-01-01:
       value:  3500000
     2015-07-01:
