@@ -14,7 +14,6 @@ class impot_traitement_salaire(Variable):
     def formula(person, period, parameters):
         revenu_net_imposable = person('revenu_net_imposable', period)
         bareme = parameters(period).prelevements_obligatoires.impots_directs.impot_traitement_salaire
-        print(bareme)
         impot = bareme.calc(revenu_net_imposable)
         return impot
 
