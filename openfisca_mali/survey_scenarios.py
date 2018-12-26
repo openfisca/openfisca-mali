@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
-import os
-import pandas as pd
-
-from openfisca_core import periods
-
 from openfisca_mali import CountryTaxBenefitSystem as MaliTaxBenefitSystem
 
 from openfisca_survey_manager.scenarios import AbstractSurveyScenario
