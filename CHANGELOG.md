@@ -1,8 +1,5 @@
 # Changelog
 
-# 1.1.1 - [#15](https://github.com/openfisca/openfisca-mal/pull/15)
-
-
 # 1.1.0 - [#14](https://github.com/openfisca/openfisca-mal/pull/14)
 
 * Amélioration technique.
