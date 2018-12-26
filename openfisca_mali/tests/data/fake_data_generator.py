@@ -30,6 +30,5 @@ def generate_mali_fake_stata_data():
     household.to_stata(os.path.join(data_directory, 'household.dta'))
 
 
-
 if __name__ == '__main__':
     generate_mali_fake_stata_data()
