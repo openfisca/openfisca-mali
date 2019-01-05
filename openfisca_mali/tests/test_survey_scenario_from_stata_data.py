@@ -18,7 +18,6 @@ def test_load_stata_data():
         )
     year = 2017
     survey_scenario = MaliSurveyScenario(
-        tax_benefit_system = MaliTaxBenefitSystem(),
         data = data,
         year = year,
         )
