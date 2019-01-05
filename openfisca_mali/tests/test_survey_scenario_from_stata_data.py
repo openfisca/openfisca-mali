@@ -4,7 +4,6 @@
 import os
 
 
-from openfisca_mali import CountryTaxBenefitSystem as MaliTaxBenefitSystem
 from openfisca_mali.survey_scenarios import MaliSurveyScenario
 
 from openfisca_mali.tests.data.fake_data_generator import data_directory
