@@ -1,5 +1,11 @@
 # Changelog
 
+# 1.1.2 - [#](https://github.com/openfisca/openfisca-mal/pull/)
+
+* Amélioration technique.
+* Détails :
+  - Abandon de la version Python 2 dans le CI
+
 # 1.1.0 - [#14](https://github.com/openfisca/openfisca-mal/pull/14)
 
 * Amélioration technique.
