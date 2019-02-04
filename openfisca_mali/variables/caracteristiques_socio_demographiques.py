@@ -18,8 +18,22 @@ class date_naissance(Variable):
 class age(Variable):
     value_type = int
     entity = Person
-    definition_period = YEAR
-    label = "Âge de l'individu (en années)"
+    definition_period = MONTH
+    label = u"Âge de l'individu (en années)"
+
+    # A person's age is computed according to its birth date.
+    def formula(person, period, parameters):
+        date_naissance = person('date_naissance', period)
+        birth_year = date_naissance.astype('datetime64[Y]').astype(int) + 1970
+        birth_month = date_naissance.astype('datetime64[M]').astype(int) % 12 + 1
+        birth_day = (date_naissance - date_naissance.astype('datetime64[M]') + 1).astype(int)
+
+        is_birthday_past = (
+            (birth_month < period.start.month)
+            + (birth_month == period.start.month) * (birth_day <= period.start.day)
+            )
+        # If the birthday is not passed this year, subtract one year
+        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)
 
 
 class marie(Variable):
