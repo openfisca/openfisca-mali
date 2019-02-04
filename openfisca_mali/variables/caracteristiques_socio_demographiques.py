@@ -31,4 +31,32 @@ class nombre_enfants_a_charge(Variable):
 
     def formula(household, period):
         nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
+        if nombre_enfants_a_charge > 10:
+            nombre_enfants_a_charge = 10
         return nombre_enfants_a_charge
+
+
+class reductions_familiales(Variable):
+    value_type = float
+    default_value = 0
+    entity = Household
+    definition_period = YEAR
+    label = "Réduction pour charge de famille en (%)"
+
+    def formula(household, period):
+        condition_pas_enfant = nombre_enfants_a_charge == 0
+        return select(
+            [
+                not_(marie, 1) * condition_pas_enfant,
+                marie * condition_pas_enfant,
+                not_(marie, 1) * not_(condition_pas_enfant, 1),
+                marie * not_(condition_pas_enfant, 1),
+            ],
+
+            [
+                reductions_familiales,
+                reductions_familiales + 0.1,
+                reductions_familiales + (nombre_enfants_a_charge * 0.025),
+                reductions_familiales + 0.1 + (nombre_enfants_a_charge * 0.025)
+            ]
+        )
