@@ -28,3 +28,10 @@ class impot_brut(Variable):
         bareme = parameters(period).prelevements_obligatoires.impots_directs.impot_traitement_salaire
         impot_brut = bareme.calc(salaire)
         return impot_brut
+
+
+class revenu_net_imposable(Variable):
+    value_type = float
+    entity = Person
+    label = u"Revenu net imposable"
+    definition_period = YEAR
