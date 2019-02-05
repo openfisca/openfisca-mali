@@ -20,21 +20,21 @@ class impot_traitement_salaire(Variable):
 
 class reductions_familiales(Variable):
     value_type = float
-    default_value = 0
     entity = Person
     definition_period = YEAR
     label = "Réduction pour charge de famille"
 
     def formula(person, period, parameters):
-        #condition_pas_enfant = nombre_enfants_a_charge == 0
+        marie = person.household('marie', period)
+        nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
         taux_reductions_familiales = parameters(period).reductions_pour_charge_de_famille
 
         taux = (marie == 0) * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_1 + \
-            (marie == 1) * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_2 + \
-            (marie == 0) * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_1 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge) + \
-            (marie == 1) * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_2 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge)
+        marie * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_2 + \
+        (marie == 0) * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_1 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge) + \
+        marie * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_2 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge)
 
-        reductions_familiales = impot_brut * taux
+        reductions_familiales = person('impot_brut', period) * taux
         return reductions_familiales
 
 
