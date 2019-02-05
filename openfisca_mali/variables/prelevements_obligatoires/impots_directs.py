@@ -13,7 +13,8 @@ class impot_traitement_salaire(Variable):
 
     def formula(person, period):
         impot_brut = person('impot_brut', period)
-        impot_traitement_salaire = person('impot_brut', period) - person('reductions_familiales', period)
+        reductions_familiales = person('reductions_familiales', period)
+        impot_traitement_salaire = impot_brut - reductions_familiales
         return impot_traitement_salaire
 
 
@@ -25,22 +26,16 @@ class reductions_familiales(Variable):
     label = "Réduction pour charge de famille"
 
     def formula(person, period, parameters):
-        condition_pas_enfant = nombre_enfants_a_charge == 0
-        return select(
-            [
-                not_(marie, 1) * condition_pas_enfant,
-                marie * condition_pas_enfant,
-                not_(marie, 1) * not_(condition_pas_enfant, 1),
-                marie * not_(condition_pas_enfant, 1),
-            ],
+        #condition_pas_enfant = nombre_enfants_a_charge == 0
+        taux_reductions_familiales = parameters(period).reductions_pour_charge_de_famille
 
-            [
-                reductions_familiales,
-                reductions_familiales + 0.1,
-                reductions_familiales + (nombre_enfants_a_charge * 0.025),
-                reductions_familiales + 0.1 + (nombre_enfants_a_charge * 0.025)
-            ]
-        )
+        taux = (marie == 0) * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_1 + \
+            (marie == 1) * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_2 + \
+            (marie == 0) * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_1 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge) + \
+            (marie == 1) * (nombre_enfants_a_charge > 0) * taux_reductions_familiales.taux_2 + (taux_reductions_familiales.taux_3 * nombre_enfants_a_charge)
+
+        reductions_familiales = impot_brut * taux
+        return reductions_familiales
 
 
 class impot_brut(Variable):
@@ -64,7 +59,7 @@ class revenu_net_imposable(Variable):
 
     def formula(person, period):
         salaire = person('salaire', period)
-        revenu_net_imposable = person('salaire', period)
+        revenu_net_imposable = salaire
         return revenu_net_imposable
 
 
