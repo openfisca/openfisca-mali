@@ -5,37 +5,15 @@ from openfisca_core.model_api import *
 from openfisca_mali.entities import *
 
 
-class impot_traitement_salaire(Variable):
-    value_type = float
-    entity = Person
-    label = u"Impôt pour les traitements et les salaires"
+class nombre_enfants_a_charge(Variable):
+    value_type = int
+    entity = Household
     definition_period = YEAR
+    label = "Nombre d'enfants à charge de la personne de référence et de son/sa conjointe dans le ménage"
 
-    def formula(person, period):
-        impot_brut = person('impot_brut', period)
-        reductions_familiales = person('reductions_familiales', period)
-        impot_traitement_salaire = impot_brut - reductions_familiales
-        return impot_traitement_salaire
-
-
-class reductions_familiales(Variable):
-    value_type = float
-    entity = Person
-    definition_period = YEAR
-    label = "Réduction pour charge de famille"
-
-    def formula(person, period, parameters):
-        marie = person.household('marie', period)
-        nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
-        taux_reductions_familiales = parameters(period).reductions_pour_charge_de_famille
-
-        taux = ((marie == 0) * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_1
-            + marie * (nombre_enfants_a_charge == 0) * taux_reductions_familiales.taux_2
-            + (marie == 0) * (nombre_enfants_a_charge > 0) * (taux_reductions_familiales.taux_1 + taux_reductions_familiales.taux_3 * nombre_enfants_a_charge)
-            + marie * (nombre_enfants_a_charge > 0) * (taux_reductions_familiales.taux_2 + taux_reductions_familiales.taux_3 * nombre_enfants_a_charge))
-
-        reductions_familiales = person('impot_brut', period) * taux
-        return reductions_familiales
+    def formula(household, period):
+        nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
+        return min_(10, nombre_enfants_a_charge)
 
 
 class impot_brut(Variable):
@@ -51,6 +29,38 @@ class impot_brut(Variable):
         return impot_brut
 
 
+class impot_traitement_salaire(Variable):
+    value_type = float
+    entity = Person
+    label = u"Impôt pour les traitements et les salaires"
+    definition_period = YEAR
+
+    def formula(person, period):
+        impot_brut = person('impot_brut', period)
+        reduction_charge_famille = person('reduction_charge_famille', period)
+        impot_traitement_salaire = impot_brut - reduction_charge_famille
+        return impot_traitement_salaire
+
+
+class reduction_charge_famille(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Réduction pour charge de famille"
+
+    def formula(person, period, parameters):
+        marie = person.household('marie', period)
+        nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
+        reductions_pour_charge_de_famille = parameters(period).reductions_pour_charge_de_famille
+        taux = (
+            not_(marie) * reductions_pour_charge_de_famille.taux_seul
+            + marie * (nombre_enfants_a_charge == 0) * reductions_pour_charge_de_famille.taux_couple
+            + (reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
+            )
+        reduction_charge_famille = person('impot_brut', period) * taux
+        return reduction_charge_famille
+
+
 class revenu_net_imposable(Variable):
     value_type = float
     entity = Person
@@ -61,14 +71,3 @@ class revenu_net_imposable(Variable):
         salaire = person('salaire', period)
         revenu_net_imposable = salaire
         return revenu_net_imposable
-
-
-class nombre_enfants_a_charge(Variable):
-    value_type = int
-    entity = Household
-    definition_period = YEAR
-    label = "Nombre d'enfants à charge de la personne de référence et de son/sa conjointe dans le ménage"
-
-    def formula(household, period):
-        nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
-        return min_(10, nombre_enfants_a_charge)

@@ -1,0 +1,5 @@
+description: Taux pour un célibataire, un divorcé ou un.e veuf.ve sans enfant à charge
+unit: /1
+values:
+  2011-01-01:
+    value: 0.0

@@ -1,12 +1,17 @@
 # Changelog
 
-# 1.1.2 - [#](https://github.com/openfisca/openfisca-mali/pull/)
+# 1.1.2 - [#24](https://github.com/openfisca/openfisca-mali/pull/24)
 
-* Amélioration technique.
+* Évolution du système socio-fiscal.
+* Périodes concernées : toutes.
+* Zones impactées : `prelevements_obligatoires/impots_directs.`.
 * Détails :
-  - Abandon de la version Python 2 dans le CI
+  * Ajoute `impot_brut`
+  * Ajoute `nombre_enfant_a_charge`
+  * Ajoute `reduction_charge_famille`
+  * Améliore `impot_traitement_salaire`
 
-# 1.1.0 - [#14](https://github.com/openfisca/openfisca-mali/pull/14)
+# 1.1.1 - [#14](https://github.com/openfisca/openfisca-mali/pull/14)
 
 * Amélioration technique.
 * Détails :
@@ -20,7 +25,7 @@
 
 # 1.0.0 - [#8](https://github.com/openfisca/openfisca-mali/pull/8)
 
-* Ajoute impot_traitement_salaire
+* Ajoute `impot_traitement_salaire`
 * Détails: configuration de CircleCI
 
 
