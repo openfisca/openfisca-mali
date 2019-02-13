@@ -58,7 +58,7 @@ class reduction_charge_famille(Variable):
         reductions_pour_charge_de_famille = parameters(period).reductions_pour_charge_de_famille
         taux = (
             not_(marie) * (reductions_pour_charge_de_famille.taux_seul + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
-            + marie * (reductions_pour_charge_de_famille.taux_couple  + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
+            + marie * (reductions_pour_charge_de_famille.taux_couple + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             )
         reduction_charge_famille = clip(impot_brut * taux, a_min = 0, a_max = impot_brut)
         return reduction_charge_famille
