@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from numpy import clip
 
 
 from openfisca_core.model_api import *
@@ -11,9 +12,10 @@ class nombre_enfants_a_charge(Variable):
     definition_period = YEAR
     label = "Nombre d'enfants à charge de la personne de référence et de son/sa conjointe dans le ménage"
 
-    def formula(household, period):
+    def formula(household, period, parameters):
         nombre_enfants_a_charge = household.nb_persons(Household.ENFANT)
-        return min_(10, nombre_enfants_a_charge)
+        limite_nombre_enfants = parameters(period).reductions_pour_charge_de_famille.limite_nombre_enfants
+        return min_(limite_nombre_enfants, nombre_enfants_a_charge)
 
 
 class impot_brut(Variable):
@@ -49,6 +51,8 @@ class reduction_charge_famille(Variable):
     label = "Réduction pour charge de famille"
 
     def formula(person, period, parameters):
+        impot_brut = person('impot_brut', period)
+
         marie = person.household('marie', period)
         nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
         reductions_pour_charge_de_famille = parameters(period).reductions_pour_charge_de_famille
@@ -56,7 +60,7 @@ class reduction_charge_famille(Variable):
             not_(marie) * (reductions_pour_charge_de_famille.taux_seul + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             + marie * (reductions_pour_charge_de_famille.taux_couple  + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             )
-        reduction_charge_famille = person('impot_brut', period) * taux
+        reduction_charge_famille = clip(impot_brut * taux, a_min = 0, a_max = impot_brut)
         return reduction_charge_famille
 
 
