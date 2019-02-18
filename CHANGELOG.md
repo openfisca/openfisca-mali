@@ -1,6 +1,6 @@
 # Changelog
 
-# 1.1.3 - [#25](https://github.com/openfisca/openfisca-mali/pull/25)
+# 1.1.3 - [#27](https://github.com/openfisca/openfisca-mali/pull/27)
 
 
 # 1.1.2 - [#24](https://github.com/openfisca/openfisca-mali/pull/24)
