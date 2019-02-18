@@ -1,0 +1,4 @@
+description: Limite du nombre d'enfants entrant dans le calcul du taux de la réduction pour charge de famille
+values:
+  2011-01-01:
+    value: 10

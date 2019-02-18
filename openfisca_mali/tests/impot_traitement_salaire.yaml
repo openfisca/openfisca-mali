@@ -1,0 +1,38 @@
+- name: Impôt pour un non imposable
+  period: 2018
+  input:
+    revenu_net_imposable: 10000
+  output:
+    revenu_net_imposable: 10000
+    impot_traitement_salaire: 0
+
+
+- name: Impôt célibataire imposable
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+  output:
+    revenu_net_imposable: 430000
+    impot_traitement_salaire: 5000
+
+
+- name: Impôt couple imposable
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+    marie: True
+  output:
+    revenu_net_imposable: 430000
+    impot_traitement_salaire: 4500
+
+
+- name: Impôt couple imposable avec 2 enfants
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+    marie: True
+    nombre_enfants_a_charge: 2
+  output:
+    revenu_net_imposable: 430000
+    impot_traitement_salaire: 4250
+

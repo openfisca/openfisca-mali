@@ -10,7 +10,7 @@ class date_naissance(Variable):
     default_value = date(1970, 1, 1)  # By default, if no value is set for a simulation,
     # we consider the people involved in a simulation to be born on the 1st of Jan 1970.
     entity = Person
-    label = u"Birth date"
+    label = u"Date de naissance"
     definition_period = ETERNITY  # This variable cannot change over time.
     reference = u"https://en.wiktionary.org/wiki/birthdate"
 
@@ -34,3 +34,14 @@ class age(Variable):
             )
         # If the birthday is not passed this year, subtract one year
         return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)
+
+
+class marie(Variable):
+    value_type = bool
+    entity = Household
+    definition_period = YEAR
+    label = "Variable binaire indiquant si la personne de référence a un-e conjoint-e dans le ménage"
+
+    def formula(household, period):
+        marie = household.nb_persons(Household.CONJOINT)
+        return marie
