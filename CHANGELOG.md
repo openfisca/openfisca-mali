@@ -1,6 +1,6 @@
 # Changelog
 
-### 1.1.4 - [#29](https://github.com/openfisca/openfisca-mali/pull/29)
+### 1.1.5 - [#29](https://github.com/openfisca/openfisca-mali/pull/29)
 
 * Évolution du système socio-fiscal.
 * Périodes concernées : toutes.
