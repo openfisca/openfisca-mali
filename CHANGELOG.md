@@ -10,6 +10,12 @@
     * Ajoute `repartition_parents`
     * Améliore `reduction_charge_famille`
 
+### 1.1.4 - [#2X](https://github.com/openfisca/openfisca-mali/pull/2X)
+
+* Changement mineur.
+* Détails :
+  - Mets à jour la dépendance de openfisca-survey-manager
+
 ### 1.1.3 - [#27](https://github.com/openfisca/openfisca-mali/pull/27)
 
 * Changement mineur.

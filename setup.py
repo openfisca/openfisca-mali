@@ -27,7 +27,7 @@ setup(
             "pytest <5.0",
             "scipy >= 0.17",  # Only used to test de_net_a_brut reform
             "requests >= 2.8",
-            "openfisca-survey-manager >= 0.17.3",
+            "openfisca-survey-manager >= 0.18.2",
             "yamllint >=1.11.1,<1.16",
             ],
         },
