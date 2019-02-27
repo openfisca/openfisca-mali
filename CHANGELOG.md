@@ -1,10 +1,20 @@
 # Changelog
 
+### 1.1.5 - [#29](https://github.com/openfisca/openfisca-mali/pull/29)
+
+* Évolution du système socio-fiscal.
+* Périodes concernées : toutes.
+* Zones impactées : `prelevements_obligatoires/impots_directs.`.
+* Détails :
+    * Ajoute `conjoint_a_des_revenus`
+    * Ajoute `repartition_parents`
+    * Améliore `reduction_charge_famille`
+
 ### 1.1.4 - [#2X](https://github.com/openfisca/openfisca-mali/pull/2X)
 
 * Changement mineur.
 * Détails :
-  - Mets à jour la dépendnace de openfisca-survey-manager
+  - Mets à jour la dépendance de openfisca-survey-manager
 
 ### 1.1.3 - [#27](https://github.com/openfisca/openfisca-mali/pull/27)
 

@@ -36,3 +36,29 @@
     revenu_net_imposable: 430000
     impot_traitement_salaire: 4250
 
+
+- name: Impôt couple imposable avec 3 enfants, sans répartition de la réduction familiale
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+    marie: True
+    nombre_enfants_a_charge: 3
+  output:
+    revenu_net_imposable: 430000
+    impot_brut: 5000
+    reduction_charge_famille: .175 * 5000
+    impot_traitement_salaire: 5000 - (.175 * 5000)
+
+
+- name: Impôt couple imposable avec 3 enfants, avec répartition de la réduction familiale
+  period: 2018
+  input:
+    revenu_net_imposable: 430000
+    marie: True
+    nombre_enfants_a_charge: 3
+    conjoint_a_des_revenus: True
+  output:
+    revenu_net_imposable: 430000
+    impot_brut: 5000
+    reduction_charge_famille: .175 * 5000 / 2
+    impot_traitement_salaire: 5000 - (.175 * 5000) / 2

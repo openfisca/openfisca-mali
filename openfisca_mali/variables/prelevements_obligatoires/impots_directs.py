@@ -52,15 +52,22 @@ class reduction_charge_famille(Variable):
 
     def formula(person, period, parameters):
         impot_brut = person('impot_brut', period)
-
         marie = person.household('marie', period)
+        conjoint_a_des_revenus = person('conjoint_a_des_revenus', period)
         nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
         reductions_pour_charge_de_famille = parameters(period).reductions_pour_charge_de_famille
+
         taux = (
             not_(marie) * (reductions_pour_charge_de_famille.taux_seul + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             + marie * (reductions_pour_charge_de_famille.taux_couple + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             )
-        reduction_charge_famille = clip(impot_brut * taux, a_min = 0, a_max = impot_brut)
+        reduction_sans_repartition = clip(impot_brut * taux, a_min = 0, a_max = impot_brut)
+
+        repartition_parents = reductions_pour_charge_de_famille.repartition_parents
+        eligible_repartition = marie * conjoint_a_des_revenus
+        reduction_avec_repartition = reduction_sans_repartition * eligible_repartition * repartition_parents
+
+        reduction_charge_famille = reduction_sans_repartition - reduction_avec_repartition
         return reduction_charge_famille
 
 

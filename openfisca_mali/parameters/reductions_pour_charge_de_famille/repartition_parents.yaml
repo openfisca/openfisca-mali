@@ -1,0 +1,5 @@
+description: Repartition des parents de la reduction pour charge de famille
+unit: /1
+values:
+  2011-01-01:
+    value: 0.5
