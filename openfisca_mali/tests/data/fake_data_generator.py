@@ -17,14 +17,14 @@ data_directory = os.path.join(
 def generate_mali_fake_stata_data():
     assert os.path.exists(data_directory), "{} is not a valid path".format(data_directory)
     person = pd.DataFrame()
-    person['revenu_net_imposable'] = [430000]
-    person['id'] = [0]
-    person['household_id'] = [0]
-    person['household_role'] = [0]
-    person['household_legacy_role'] = [0]
+    person['revenu_net_imposable'] = [430000, 0]
+    person['id'] = [0, 1]
+    person['household_id'] = [0, 1]
+    person['household_role'] = [0, 1]
+    person['household_legacy_role'] = [0, 1]
 
     household = pd.DataFrame()
-    household['household_id'] = [0]
+    household['household_id'] = [0, 1]
 
     person.to_stata(os.path.join(data_directory, 'person.dta'))
     household.to_stata(os.path.join(data_directory, 'household.dta'))

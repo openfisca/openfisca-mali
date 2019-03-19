@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-
+import logging
 import os
 
 
 from openfisca_mali.survey_scenarios import MaliSurveyScenario
-
 from openfisca_mali.tests.data.fake_data_generator import data_directory
+
+
+log = logging.getLogger(__name__)
 
 
 def test_load_stata_data():
@@ -20,7 +22,7 @@ def test_load_stata_data():
         data = data,
         year = year,
         )
-    assert survey_scenario.calculate_variable('impot_traitement_salaire', period = year) == [5000]
+    assert all(survey_scenario.calculate_variable('impot_traitement_salaire', period = year) == [5000, 0])
 
 
 if __name__ == '__main__':
