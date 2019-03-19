@@ -18,9 +18,9 @@ install: deps
 		pip install openfisca-core[web-api]
 
 build: clean deps
-		@# Install OpenFisca-France for deployment and publishing.
+		@# Install OpenFisca-Mali for deployment and publishing.
 		@# `make build` allows us to be be sure tests are run against the packaged version
-		@# of OpenFisca-France, the same we put in the hands of users and reusers.
+		@# of OpenFisca-Mali, the same we put in the hands of users and reusers.
 		python setup.py bdist_wheel
 		find dist -name "*.whl" -exec pip install --upgrade {}[dev] \;
 		pip install openfisca-core[web-api]
@@ -39,7 +39,7 @@ check-style:
 		flake8 `git ls-files | grep "\.py$$"`
 
 test: clean check-syntax-errors check-style
-		@# Launch tests from openfisca_france/tests directory (and not .) because TaxBenefitSystem must be initialized
+		@# Launch tests from openfisca_mali/tests directory (and not .) because TaxBenefitSystem must be initialized
 		@# before parsing source files containing formulas.
 		pytest
 		openfisca-run-test --country-package openfisca_mali openfisca_mali/tests
