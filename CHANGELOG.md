@@ -1,6 +1,6 @@
 # Changelog
 
-### 1.1.6 - [#XX](https://github.com/openfisca/openfisca-mali/pull/XX)
+### 1.1.6 - [#35](https://github.com/openfisca/openfisca-mali/pull/35)
 
 * Adapte aux nouvelles version de openfisca-corete openfisca-survey-manager
 
