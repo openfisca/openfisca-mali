@@ -21,7 +21,7 @@ def generate_mali_fake_stata_data():
     person['id'] = [0, 1]
     person['household_id'] = [0, 1]
     person['household_role'] = [0, 1]
-    person['household_legacy_role'] = [0, 1]
+    person['household_role_index'] = [0, 1]
 
     household = pd.DataFrame()
     household['household_id'] = [0, 1]
