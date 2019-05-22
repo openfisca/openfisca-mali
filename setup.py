@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Mali',
-    version='1.1.5',
+    version='1.1.6',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for Mali',
@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/openfisca-mali',
     include_package_data=True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >=25.2,<28.0',
+        'OpenFisca-Core >=34.2.2,<35.0',
         ],
     extras_require = {
         'dev': [
@@ -27,7 +27,7 @@ setup(
             "pytest <5.0",
             "scipy >= 0.17",  # Only used to test de_net_a_brut reform
             "requests >= 2.8",
-            "openfisca-survey-manager >= 0.18.2",
+            "openfisca-survey-manager >= 0.24",
             "yamllint >=1.11.1,<1.16",
             ],
         },

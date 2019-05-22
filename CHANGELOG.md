@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.1.6 - [#XX](https://github.com/openfisca/openfisca-mali/pull/XX)
+
+* Adapte aux nouvelles version de openfisca-corete openfisca-survey-manager
+
 ### 1.1.5 - [#29](https://github.com/openfisca/openfisca-mali/pull/29)
 
 * Évolution du système socio-fiscal.
