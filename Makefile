@@ -42,4 +42,4 @@ test: clean check-syntax-errors check-style
 		@# Launch tests from openfisca_mali/tests directory (and not .) because TaxBenefitSystem must be initialized
 		@# before parsing source files containing formulas.
 		pytest
-		openfisca-run-test --country-package openfisca_mali openfisca_mali/tests
+		openfisca test --country-package openfisca_mali openfisca_mali/tests

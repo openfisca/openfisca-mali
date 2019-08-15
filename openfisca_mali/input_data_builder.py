@@ -28,9 +28,9 @@ def get_data_file_path():
 
 def create_dataframes_from_stata_data():
     data_file_path = get_data_file_path()
-    dico_labels = pd.read_stata(data_file_path, iterator=True)
-    import pprint
-    pprint.pprint(dico_labels.variable_labels())
+    # dico_labels = pd.read_stata(data_file_path, iterator=True)
+    # import pprint
+    # pprint.pprint(dico_labels.variable_labels())
     dataframe = pd.read_stata(data_file_path)
     person_variables = [
         'age',
