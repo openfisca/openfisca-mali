@@ -1,0 +1,11 @@
+description: Taux de TVA
+taux_normal:
+  description: Taux normal
+  values:
+    1999-01-01:
+      value: 0.18
+  metadata:
+    unit: /1
+metadata:
+  order:
+  - taux_normal
