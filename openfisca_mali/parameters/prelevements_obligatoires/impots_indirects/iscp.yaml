@@ -1,0 +1,21 @@
+description: Impôt spécial sur certains produits
+alcools:
+  description: Impôt spécial sur les alcools
+  values:
+    1999-01-01:
+      value: 0.10
+  metadata:
+    unit: /1
+tabacs:
+  description: Impôt spécial sur les tabacs
+  values:
+    1999-01-01:
+      value: 0.10
+  metadata:
+    unit: /1
+metadata:
+  order:
+  - alcools
+  - tabacs
+  reference:
+  - Loi 90-115/AN-RM du 31/12/90
