@@ -54,5 +54,4 @@ if __name__ == '__main__':
     import sys
     logging.basicConfig(level = logging.DEBUG, stream = sys.stdout)
     test_survey_scenario()
-    test_load_stata_data()
-
+    test_load_fake_stata_data()

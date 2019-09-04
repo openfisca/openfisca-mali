@@ -15,7 +15,7 @@ install: deps
 		@# `make install` installs the editable version of OpenFisca-Mali.
 		@# This allows contributors to test as they code.
 		pip install --editable .[dev] --upgrade
-		pip install openfisca-core[web-api]
+		pip install openfisca-core
 
 build: clean deps
 		@# Install OpenFisca-Mali for deployment and publishing.
@@ -42,4 +42,4 @@ test: clean check-syntax-errors check-style
 		@# Launch tests from openfisca_mali/tests directory (and not .) because TaxBenefitSystem must be initialized
 		@# before parsing source files containing formulas.
 		pytest
-		openfisca-run-test --country-package openfisca_mali openfisca_mali/tests
+		openfisca test --country-package openfisca_mali openfisca_mali/tests
