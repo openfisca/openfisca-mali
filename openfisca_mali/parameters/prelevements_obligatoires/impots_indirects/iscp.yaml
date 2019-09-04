@@ -1,21 +1,85 @@
 description: Impôt spécial sur certains produits
-alcools:
-  description: Impôt spécial sur les alcools
+armes:
+  description: Impôt spécial sur les armes et munitions
   values:
+    2015-01-01:
+      value: .4
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
+  metadata:
+    unit: /1
+boissons_alcoolisees:
+  description: Impôt spécial sur les boissons alcoolisées
+  values:
+    2015-01-01:
+      value: .50
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
     1999-01-01:
       value: 0.10
   metadata:
     unit: /1
+boissons_non_alcoolisees:
+  description: Impôt spécial sur les boissons non-alcoolisées
+  values:
+    2015-01-01:
+      value: .12
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
+  metadata:
+    unit: /1
+produits_miniers:
+  description: Impôt spécial sur les produits miniers (marbres et lingots d'or)
+  values:
+    2015-01-01:
+      value: .05
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
+sachets_plastiques:
+  description: Impôt spécial sur les sachets en matière plastique
+  values:
+    2015-01-01:
+      value: .10
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
 tabacs:
-  description: Impôt spécial sur les tabacs
+  description: Impôt spécial sur les tabacs (hors cigarettes gamme 3)
   values:
+    2015-01-01:
+      value: .32
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
     1999-01-01:
       value: 0.10
   metadata:
     unit: /1
+tabacs_cigarettes_gammes_3:
+  description: Impôt spécial sur les tabacs (cigarettes gamme 3)
+  values:
+    2015-01-01:
+      value: .22
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
+    1999-01-01:
+      value: 0.10
+  metadata:
+    unit: /1
+vehicules:
+  description: Impôt spécial sur les véhicules de tourisme (puissance supérieure à 13 cv)
+  values:
+    2015-01-01:
+      value: .05
+      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
 metadata:
   order:
-  - alcools
+  - armes
+  - boissons_alcoolisees
+  - boissons_non_alcoolisees
+  - produits_miniers
+  - sachets_plastiques
   - tabacs
+  - tabacs_cigarettes_gammes_3
+  - vehicules
   reference:
   - Loi 90-115/AN-RM du 31/12/90
