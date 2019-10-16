@@ -4,8 +4,6 @@ armes:
   values:
     2015-01-01:
       value: .4
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
   metadata:
     unit: /1
 boissons_alcoolisees:
@@ -13,8 +11,6 @@ boissons_alcoolisees:
   values:
     2015-01-01:
       value: .50
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
     1999-01-01:
       value: 0.10
   metadata:
@@ -24,8 +20,6 @@ boissons_non_alcoolisees:
   values:
     2015-01-01:
       value: .12
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
   metadata:
     unit: /1
 produits_miniers:
@@ -33,22 +27,16 @@ produits_miniers:
   values:
     2015-01-01:
       value: .05
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
 sachets_plastiques:
   description: Impôt spécial sur les sachets en matière plastique
   values:
     2015-01-01:
       value: .10
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
 tabacs:
   description: Impôt spécial sur les tabacs (hors cigarettes gamme 3)
   values:
     2015-01-01:
       value: .32
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
     1999-01-01:
       value: 0.10
   metadata:
@@ -58,8 +46,6 @@ tabacs_cigarettes_gammes_3:
   values:
     2015-01-01:
       value: .22
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
     1999-01-01:
       value: 0.10
   metadata:
@@ -69,8 +55,6 @@ vehicules:
   values:
     2015-01-01:
       value: .05
-      reference: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
-      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
 metadata:
   order:
   - armes
@@ -82,4 +66,8 @@ metadata:
   - tabacs_cigarettes_gammes_3
   - vehicules
   reference:
-  - Loi 90-115/AN-RM du 31/12/90
+    2015-08-06:
+      title: Décret n°2015-0548/P-RM du 6 août 2015 fixant les taux en matière d’ISCP
+      href: https://www.dgi.gouv.ml/CGI/#_Toc504511816
+    1990-01-01:
+      title: Loi 90-115/AN-RM du 31/12/90
