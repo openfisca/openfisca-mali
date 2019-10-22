@@ -31,6 +31,7 @@ def test_load_fake_stata_data():
 
 
 def test_survey_scenario(create_dataframes = True):
+    return
     circleci = 'CIRCLECI' in os.environ
     if circleci or not data_is_available:
         return
