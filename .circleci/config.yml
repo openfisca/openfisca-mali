@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Activate virtualenv
           command: |
-            echo "source /tmp/venv/openfisca_france/bin/activate" >> $BASH_ENV
+            echo "source /tmp/venv/openfisca_mali/bin/activate" >> $BASH_ENV
 
       - run:
           name: Lint files
@@ -75,7 +75,7 @@ jobs:
       - run:
           name: Activate virtualenv
           command: |
-            echo "source /tmp/venv/openfisca_france/bin/activate" >> $BASH_ENV
+            echo "source /tmp/venv/openfisca_mali/bin/activate" >> $BASH_ENV
 
       - run:
           name: Lint files
@@ -119,7 +119,7 @@ jobs:
       - run:
           name: Upload a Python package to Pypi
           command: |
-            source /tmp/venv/openfisca_france/bin/activate
+            source /tmp/venv/openfisca_mali/bin/activate
             twine upload dist/* --username $PYPI_USERNAME --password $PYPI_PASSWORD
 
       - run:
