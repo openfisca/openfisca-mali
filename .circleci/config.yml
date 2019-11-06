@@ -2,6 +2,7 @@
 version: 2
 jobs:
   build:
+    parallelism: 2  # Speed up the tests, while letting two containers available for other builds.
     docker:
       - image: python:3.7
 
@@ -9,30 +10,85 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-py3-{{ checksum "setup.py" }}
+          key: v1-py3-deps-{{ .Branch }}-{{ checksum "setup.py" }}
 
       - run:
           name: Create a virtualenv
           command: |
-            mkdir -p /tmp/venv/mali
-            python -m venv /tmp/venv/mali
-            echo "source /tmp/venv/mali/bin/activate" >> $BASH_ENV
+            mkdir -p /tmp/venv/openfisca_mali
+            python -m venv /tmp/venv/openfisca_mali
+            echo "source /tmp/venv/openfisca_mali/bin/activate" >> $BASH_ENV
 
       - run:
           name: Install dependencies
           command: |
-            pip install --upgrade pip twine wheel
-            # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH#egg=OpenFisca-Core[web-api]  # use a specific branch of OpenFisca-Core
-            pip install --editable .[dev] --upgrade
+            make build
+            # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
 
       - save_cache:
-          key: v1-py3-{{ checksum "setup.py" }}
+          key: v1-py3-deps-{{ .Branch }}-{{ checksum "setup.py" }}
           paths:
-            - /tmp/venv/mali
+            - /tmp/venv/openfisca_mali
+
+      - save_cache:
+          key: v1-py3-build-{{ .Revision }}
+          paths:
+            - dist
 
       - run:
           name: Run tests
-          command: make test
+          command: |
+            pytest `circleci tests glob "openfisca_mali/tests/[^_]*.py" | circleci tests split`
+            openfisca test -c openfisca_mali openfisca_mali/tests/formulas/*.yaml
+            # openfisca test -c openfisca_mali `circleci tests glob "openfisca_mali/tests/**/*.{yaml,yml}" | circleci tests split`
+
+  lint_yaml_files:
+    docker:
+      - image: python:3.7
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: v1-py3-deps-{{ .Branch }}-{{ checksum "setup.py" }}
+
+      - run:
+          name: Activate virtualenv
+          command: |
+            echo "source /tmp/venv/openfisca_mali/bin/activate" >> $BASH_ENV
+
+      - run:
+          name: Lint files
+          command: |
+            .circleci/lint-changed-yaml-tests.sh
+
+  lint_python_files:
+    docker:
+      - image: python:3.7
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: v1-py3-deps-{{ .Branch }}-{{ checksum "setup.py" }}
+
+      - run:
+          name: Activate virtualenv
+          command: |
+            echo "source /tmp/venv/openfisca_mali/bin/activate" >> $BASH_ENV
+
+      - run:
+          name: Lint files
+          command: |
+            make check-syntax-errors check-style
+            .circleci/lint-changed-python-files.sh
+
+  check_version_and_changelog:
+    docker:
+      - image: python:3.7
+
+    steps:
+      - checkout
 
       - run:
           name: Check version number has been properly updated
@@ -44,14 +100,17 @@ jobs:
     docker:
       - image: python:3.7
     environment:
-      PYPI_USERNAME: openfisca-bot  # Edit this value to replace it by your Pypi username
+      PYPI_USERNAME: openfisca-bot
       # PYPI_PASSWORD: this value is set in CircleCI's web interface; do not set it here, it is a secret!
 
     steps:
       - checkout
 
       - restore_cache:
-          key: v1-py3-{{ checksum "setup.py" }}
+          key: v1-py3-deps-{{ .Branch }}-{{ checksum "setup.py" }}
+
+      - restore_cache:
+          key: v1-py3-build-{{ .Revision }}
 
       - run:
           name: Check for functional changes
@@ -60,17 +119,35 @@ jobs:
       - run:
           name: Upload a Python package to Pypi
           command: |
-            source /tmp/venv/mali/bin/activate
-            .circleci/publish-python-package.sh
+            source /tmp/venv/openfisca_mali/bin/activate
+            twine upload dist/* --username $PYPI_USERNAME --password $PYPI_PASSWORD
+
+      - run:
+          name: Publish a git tag
+          command: .circleci/publish-git-tag.sh
+
+      - run:
+          name: Deploy the Web API
+          command: ssh -o StrictHostKeyChecking=no deploy-api@fr.openfisca.org
 
 workflows:
   version: 2
   build_and_deploy:
     jobs:
+      - check_version_and_changelog
       - build
-      - deploy:
+      - lint_yaml_files:
           requires:
             - build
+      - lint_python_files:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - check_version_and_changelog
+            - build
+            - lint_yaml_files
+            - lint_python_files
           filters:
             branches:
               only: master
