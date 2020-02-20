@@ -1,8 +1,12 @@
 # Changelog
 
+### 1.1.7 - [#49](https://github.com/openfisca/openfisca-mali/pull/49)
+
+* Utilise la CI de openfisca-france
+
 ### 1.1.6 - [#35](https://github.com/openfisca/openfisca-mali/pull/35)
 
-* Adapte aux nouvelles version de openfisca-corete openfisca-survey-manager
+* Adapte aux nouvelles version de openfisca-core et d'openfisca-survey-manager
 
 ### 1.1.5 - [#29](https://github.com/openfisca/openfisca-mali/pull/29)
 
