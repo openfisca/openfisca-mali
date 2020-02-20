@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from openfisca_mali import CountryTaxBenefitSystem as MaliTaxBenefitSystem
 
 from openfisca_survey_manager.scenarios import AbstractSurveyScenario
