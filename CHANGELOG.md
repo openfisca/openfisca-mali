@@ -1,6 +1,6 @@
 # Changelog
 
-### 1.1.7 - [#XX](https://github.com/openfisca/openfisca-mali/pull/XX)
+### 1.1.7 - [#49](https://github.com/openfisca/openfisca-mali/pull/49)
 
 * Utilise la CI de openfisca-france
 
