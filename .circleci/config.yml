@@ -126,9 +126,9 @@ jobs:
           name: Publish a git tag
           command: .circleci/publish-git-tag.sh
 
-      - run:
-          name: Deploy the Web API
-          command: ssh -o StrictHostKeyChecking=no deploy-api@fr.openfisca.org
+      # - run:
+      #     name: Deploy the Web API
+      #     command: ssh -o StrictHostKeyChecking=no deploy-api@fr.openfisca.org
 
 workflows:
   version: 2
