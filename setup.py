@@ -1,12 +1,11 @@
 #! /usr/bin/env python
 
-
 from setuptools import setup, find_packages
 
 
 setup(
     name='OpenFisca-Mali',
-    version='1.1.8',
+    version='1.2.0',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for Mali',
@@ -27,7 +26,7 @@ setup(
             "scipy >= 0.17",  # Only used to test de_net_a_brut reform
             "requests >= 2.8",
             "openfisca-ceq >=0.4.0",
-            "openfisca-survey-manager[dev] >= 0.34, <1.0",
+            "openfisca-survey-manager[dev] >= 0.38, <1.0",
             "yamllint >=1.11.1,<1.21",
             ],
         'ceq': [
