@@ -15,7 +15,6 @@ COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class CountryTaxBenefitSystem(TaxBenefitSystem):
-
     def __init__(self, coicop = True):
         # We initialize our tax and benefit system with the general constructor
         super(CountryTaxBenefitSystem, self).__init__(entities.entities)

@@ -1,6 +1,6 @@
 description: Taux de TVA
 taux_normal:
-  description: Taux normal
+  description: Taux normal de TVA
   values:
     1999-01-01:
       value: 0.18
@@ -8,6 +8,15 @@ taux_normal:
     unit: /1
   reference: Loi 90-115/AN-RM du 31/12/90
 
+taux_reduit:
+  description: Taux reduit de TVA
+  values:
+    1999-01-01:
+      value: 0.05
+  metadata:
+    unit: /1
+
 metadata:
   order:
   - taux_normal
+  - taux_reduit
