@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.2.0 - [#51](https://github.com/openfisca/openfisca-mali/pull/51)
+
+* Évolution du système socio-fiscal.
+* Périodes concernées : toutes.
+* Zones impactées : `parameters/prelevements_obligatoires/impots_indirects/tva.yaml`.
+* Détails :
+  - Ajout du taux réduit de tva
+
 ### 1.1.8 - [#50](https://github.com/openfisca/openfisca-mali/pull/50)
 
 * Adapte aux nouvelles version de openfisca-ceq
