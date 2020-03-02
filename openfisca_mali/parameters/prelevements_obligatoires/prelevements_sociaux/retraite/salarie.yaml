@@ -1,0 +1,4 @@
+description: Barème des cotisations salariales de vieillesse invalidité, survivants
+unit: /1
+values:
+  1950-01-01: .036

@@ -1,0 +1,4 @@
+description: Barème des Prestations familiales et Indemnités journalières de maternité
+unit: /1
+values:
+  1950-01-01: .08

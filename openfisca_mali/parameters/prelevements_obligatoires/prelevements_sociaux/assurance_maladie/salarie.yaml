@@ -1,0 +1,4 @@
+description: Barème des cotisations salariales pour l'Assurance maladie obligatoire (AMO)
+unit: /1
+values:
+  1950-01-01: .0306
