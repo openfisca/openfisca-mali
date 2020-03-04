@@ -77,6 +77,19 @@ class revenu_net_imposable(Variable):
     definition_period = YEAR
 
     def formula(person, period):
-        salaire = person('salaire', period)
+        salaire = person('salaire_imposable', period)
         revenu_net_imposable = salaire
         return revenu_net_imposable
+
+
+class salaire_net_a_payer(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Salaire net à payer"
+
+    def formula(person, period, parameters):
+        return (
+            person('salaire_imposable', period)
+            - person('impot_traitement_salaire', period)
+            )
