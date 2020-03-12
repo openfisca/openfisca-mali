@@ -12,7 +12,7 @@ class accidents_du_travail(Variable):
         salaire_brut_annuel = person('salaire_brut', period)
         accidents_du_travail = parameters(period).prelevements_obligatoires.prelevements_sociaux.accidents_du_travail
         taux_minimal = accidents_du_travail.taux_minimal
-        return taux_minimal * salaire_brut_annuel
+        return taux_minimal.calc(salaire_brut_annuel)
 
 
 class anpe(Variable):
