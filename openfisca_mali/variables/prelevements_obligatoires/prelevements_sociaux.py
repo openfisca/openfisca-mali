@@ -38,7 +38,7 @@ class cotisations_employeur(Variable):
             person('anpe', period)
             + person('accidents_du_travail', period)
             + person('famille', period)
-            + person('maladie_employeur', period)
+            + person('sante_employeur', period)
             + person('retraite_employeur', period)
             )
 
@@ -65,7 +65,7 @@ class famille(Variable):
         return 12 * famille.calc(salaire_brut_annuel / 12)
 
 
-class maladie_employeur(Variable):
+class sante_employeur(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
