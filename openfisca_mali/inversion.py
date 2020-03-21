@@ -12,9 +12,9 @@ class salaire_brut(Variable):
         salaire = person('salaire', period)
         impot_traitement_salaire = parameters(period).prelevements_obligatoires.impots_directs.impot_traitement_salaire.copy()
         retraite = parameters(period).prelevements_obligatoires.prelevements_sociaux.retraite.salarie.copy()
-        maladie = parameters(period).prelevements_obligatoires.prelevements_sociaux.maladie.salarie
+        sante = parameters(period).prelevements_obligatoires.prelevements_sociaux.maladie.salarie
         prelevements_sociaux = retraite.copy()
-        prelevements_sociaux.add_tax_scale(maladie)
+        prelevements_sociaux.add_tax_scale(sante)
         salaire_imposable = impot_traitement_salaire.inverse().calc(salaire)
         salaire_brut = 12 * prelevements_sociaux.inverse().calc(salaire_imposable / 12)
         return salaire_brut

@@ -50,7 +50,7 @@ class cotisations_salariales(Variable):
     label = "Cotisation sociale salariales"
 
     def formula(person, period):
-        return person('retraite_salarie', period) + person('maladie_salarie', period)
+        return person('retraite_salarie', period) + person('sante_salarie', period)
 
 
 class famille(Variable):
@@ -77,7 +77,7 @@ class sante_employeur(Variable):
         return 12 * maladie.employeur.calc(salaire_brut_annuel / 12)
 
 
-class maladie_salarie(Variable):
+class sante_salarie(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
