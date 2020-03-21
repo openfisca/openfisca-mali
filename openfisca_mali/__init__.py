@@ -28,6 +28,6 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
                 log.info("No coicop consumption variable: \n")
                 log.info(e)
                 log.info("Passing")
-            if inversion:
-                from openfisca_mali.inversion import salaire_brut
-                self.update_variable(salaire_brut)
+        if inversion:
+            from openfisca_mali.inversion import salaire_brut
+            self.update_variable(salaire_brut)
