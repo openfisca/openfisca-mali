@@ -1,6 +1,7 @@
 from openfisca_core.model_api import *
 from openfisca_mali.entities import *
 
+
 class salaire(Variable):
     value_type = float
     entity = Person
