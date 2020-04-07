@@ -30,6 +30,28 @@ class impot_brut(Variable):
         return impot_brut
 
 
+class impots_directs(Variable):
+    value_type = float
+    entity = Household
+    definition_period = YEAR
+    label = "Impôts directs payés par le ménage"
+
+    def formula(household, period):
+        impot_traitement_salaire = household.members('impot_traitement_salaire', period)
+        return household.sum(impot_traitement_salaire)
+
+
+class impot_revenu(Variable):
+    value_type = float
+    entity = Household
+    definition_period = YEAR
+    label = "Impôt sur le revenu payé par le ménage"
+
+    def formula(household, period):
+        impot_traitement_salaire = household.members('impot_traitement_salaire', period)
+        return household.sum(impot_traitement_salaire)
+
+
 class impot_traitement_salaire(Variable):
     value_type = float
     entity = Person
@@ -93,3 +115,4 @@ class salaire_net_a_payer(Variable):
             person('salaire_imposable', period)
             - person('impot_traitement_salaire', period)
             )
+
