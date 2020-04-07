@@ -1,0 +1,15 @@
+description: Barème des Prestations familiales et indemnités journalières de maternité
+unit: /1
+brackets:
+- rate:
+    1950-01-01:
+      value: .08
+  threshold:
+    1950-01-01:
+      value: 0.0
+- rate:
+    1950-01-01:
+      value: 0.0
+  threshold:
+    1950-01-01:
+      value: 0.0

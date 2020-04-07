@@ -1,0 +1,15 @@
+description: Barème des cotisations patronales pour l'Assurance maladie obligatoire (AMO)
+unit: /1
+brackets:
+- rate:
+    1950-01-01:
+      value: .035
+  threshold:
+    1950-01-01:
+      value: 0.0
+- rate:
+    1950-01-01:
+      value: 0.0
+  threshold:
+    1950-01-01:
+      value: 0.0

@@ -1,0 +1,13 @@
+- name: Salarié au salaire moyen
+  period: 2016
+  input:
+    salaire_brut: 12 * 100000
+  output:
+    famille: 12 * .08 * 100000
+    sante_employeur: 12 * .035 * 100000
+    sante_salarie: 12 * .0306 * 100000
+    retraite_employeur: 12 * .054 * 100000
+    retraite_salarie: 12 * .036 * 100000
+    salaire_imposable: 12 * (1 - .036 - .0306) * 100000
+    impot_traitement_salaire: 77421.6
+    salaire_net_a_payer: 12 * (1 - .036 - .0306) * 100000 - 77421.6
