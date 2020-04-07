@@ -115,4 +115,3 @@ class salaire_net_a_payer(Variable):
             person('salaire_imposable', period)
             - person('impot_traitement_salaire', period)
             )
-
