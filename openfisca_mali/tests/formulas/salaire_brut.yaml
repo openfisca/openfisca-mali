@@ -11,3 +11,12 @@
     retraite_salarie: 12 * .036 * 100000
     salaire_imposable: 12 * (1 - .036 - .0306) * 100000
     impot_traitement_salaire: 77421.6
+
+
+- name: Salarié
+  period: 2016
+  input:
+    salaire: 4.662e6
+    nombre_enfants_a_charge: 6
+  output:
+    salaire_net_a_payer: 4.662e6

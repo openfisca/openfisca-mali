@@ -83,7 +83,6 @@ class reduction_charge_famille(Variable):
             + marie * (reductions_pour_charge_de_famille.taux_couple + reductions_pour_charge_de_famille.taux_enfant_a_charge * nombre_enfants_a_charge)
             )
         reduction_sans_repartition = clip(impot_brut * taux, a_min = 0, a_max = impot_brut)
-
         repartition_parents = reductions_pour_charge_de_famille.repartition_parents
         eligible_repartition = marie * conjoint_a_des_revenus
         reduction_avec_repartition = reduction_sans_repartition * eligible_repartition * repartition_parents
