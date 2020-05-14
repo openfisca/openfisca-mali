@@ -53,7 +53,6 @@ class salaire_brut(Variable):
     def formula(person, period, parameters):
         salaire = person('salaire', period)
         marie = person.household('marie', period)
-        conjoint_a_des_revenus = person('conjoint_a_des_revenus', period)
         nombre_enfants_a_charge = person.household('nombre_enfants_a_charge', period)
         reductions_pour_charge_de_famille = parameters(period).reductions_pour_charge_de_famille
         taux = (

@@ -42,8 +42,3 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
             self.update_variable(revenu_foncier_brut)
             self.update_variable(revenu_non_salarie_brut)
             self.update_variable(salaire_brut)
-
-
-
-
-            self.update_variable(salaire_brut)
