@@ -36,7 +36,16 @@ Household = build_entity(
             'doc': 'Membres du ménage différents de la personne de référence, de son/sa conjoint-e et de leurs enfants'
             }
         ]
-    )
+            # 'Chef du menage',
+            # 'Conjoint du CM',
+            # 'Enfant du chef/conjoint du CM',
+            # autre rassemble:
+            # 'Pere/mere du CM/conjoint du CM',
+            # 'Autre parent du CM/conjoint du CM',
+            # 'Autres personnes non apparentees',
+            # 'Domestique'
+        )
+
 
 Person = build_entity(
     key = "person",
